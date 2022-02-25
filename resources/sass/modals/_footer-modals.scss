@@ -1,0 +1,26 @@
+.remodal.footer-modal{
+    padding: 4rem;
+    width: 44rem;
+
+    .content{
+        text-align: left;
+        line-height: 1.2;
+
+        .header{
+            margin-bottom: 2.4rem;
+
+            font-size: 2.7rem;
+            text-transform: uppercase;
+        }
+        .body{
+            font-size: 1.8rem;
+
+            a{
+                position: relative;
+
+                color: #ed1c24;
+                border-bottom: 2px solid #ed1c24;
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+div[data-remodal-id="sms_forgot"] {
+    width: 35rem;
+    padding: 2rem 3rem;
+
+    p {
+        font-size: 3rem;
+        line-height: 1.05em;
+    }
+    .go-wrapper {
+        margin-bottom: 2rem;
+    }
+    form {
+        width: 100%;
+        .form-group {
+            width: 100%;
+            position: relative;
+
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+
+            input {
+                display: inline-block;
+                width: 100%;
+                font-size: 2.6rem;
+                padding: .5rem 1.5rem;
+                border-radius: 1.2rem;
+                &::placeholder {
+                    color: $main_font_color;
+                }
+            }
+        }
+    }
+
+    p.or {
+        margin: 1.5rem 0;
+    }
+
+    .go-wrapper {
+        .btn-catch {
+            padding: 0.8rem 1.4rem;
+
+            &.tme {
+                display: inline-flex;
+                justify-content: center;
+                font-size: 2.6rem;
+                line-height: 1em;
+                background: $blue;
+                padding: 1.2rem 0;
+                img {
+                    height: 3rem;
+                    margin-left: 1rem;
+                    margin-top: -0.5rem;
+                }
+
+            }
+        }
+    }
+
+    .footer {
+        width: 121%;
+        padding: 4rem 0 2rem;
+        margin-left: -10.5%;
+        margin-bottom: -15%;
+        margin-top: 2rem;
+        background: url('../i/bubble.png') top left/ cover repeat-x;
+        border-radius: 0 0 1.2rem 1.2rem;
+        color: $white;
+
+        p {
+            font-size: 3.6rem;
+            margin: 0 0 2rem;
+        }
+
+        .go-wrapper {
+            .btn-catch {
+                font-size: 2.5rem;
+                color: $violet;
+                background: $white;
+            }
+        }
+    }
+
+}

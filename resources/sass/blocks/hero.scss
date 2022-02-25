@@ -1,0 +1,209 @@
+section#hero {
+    position: relative;
+    max-width: 100%;
+    .container {
+        padding-top: 8rem;
+        display: flex;
+        justify-content: space-between;
+
+        .image-blocks {
+            position: relative;
+            min-height: 64rem;
+            width: 50%;
+
+            h1 {
+                text-transform: uppercase;
+                text-align: center;
+                margin-top: 5rem;
+                margin-bottom: 2rem;
+                font-size: 7rem;
+                line-height: 7rem;
+                font-weight: 500;
+                position: relative;
+                z-index: 0;
+            }
+
+            img.hero-images {
+                position: absolute;
+                pointer-events: none;
+                user-select: none;
+                z-index: 1;
+            }
+
+            &.left {
+                img.hero-images {
+                    height: 60rem;
+                    left: -5rem;
+                    bottom: 0;
+                }
+            }
+
+            &.right {
+                img.hero-images {
+                    left: 20rem;
+                    bottom: -13rem;
+                    height: 45rem;
+                }
+
+                .vapour {
+                    position: relative;
+                    display: flex;
+                    z-index: 1;
+                    padding: 0 2rem;
+                    justify-content: center;
+                    left: 10rem;
+                    pointer-events: none;
+                    span {
+                        position: relative;
+                        bottom: 5rem;
+                        display: block;
+                        margin: 0 .2rem 5rem;
+                        min-width:.8rem;
+                        height: 20rem;
+                        background: #fff;
+                        border-radius: 50%;
+                        animation: animate 5s linear infinite;
+                        opacity: 0;
+                        filter: blur(10px);
+                        animation-delay: calc(var(--v) * -0.5s);
+                    }
+                }
+            }
+
+            .titles {
+                position: absolute;
+                font-size: 5rem;
+                text-align: center;
+                text-transform: uppercase;
+                line-height: 5rem;
+                z-index: 4;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    background: url('../i/arrow.svg') center center/ contain no-repeat;
+                    display: block;
+                    pointer-events: none;
+                    user-select: none;
+                }
+
+                &.top {
+                    bottom: 55rem;
+                    left: 0;
+                    transform: rotateZ(15deg);
+                    &:after {
+                        left: 13rem;
+                        top: 6rem;
+                        transform: rotateZ(-80deg);
+                        height: 16rem;
+                        width: 5rem;
+                    }
+                }
+
+                &.bot {
+                    bottom: 12rem;
+                    right: -15rem;
+                    transform: rotateZ(-6deg);
+                    &:after {
+                        top: -18rem;
+                        left: 2rem;
+                        height: 18rem;
+                        width: 7rem;
+                        transform-origin: center center;
+                        transform: rotateZ(150deg);
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    15% {
+        opacity: .7;
+    }
+    50% {
+        transform: translateY(-18rem) scaleX(5);
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-36rem) scaleX(10);
+    }
+}
+
+@include responsive {
+    section#hero {
+        position: relative;
+        max-width: 100%;
+        .container {
+            &:not(:last-child) {
+                display: block;
+                padding-top: 0;
+
+                h1 {
+                    text-align: center;
+                    line-height: 1em;
+                    font-size: 6rem;
+                    margin: 4rem 0 2rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            .image-blocks {
+                min-height: 90vmin;
+                &.left {
+                    img.hero-images {
+                        height: 35rem;
+                        left: -10rem;
+                        bottom: 0;
+                    }
+                }
+                &.right {
+                    img.hero-images {
+                        left: 1rem;
+                        bottom: -3rem;
+                        height: 25rem;
+                    }
+                    .vapour {
+                        left: 0;
+                        bottom: -22rem;
+                    }
+                }
+
+                .titles {
+                    font-size: 3rem;
+                    line-height: 1em;
+                    &.top {
+                        bottom: 40rem;
+                        &:after {
+                            transform: rotateZ(-40deg);
+                            left: 4rem;
+                            height: 10rem;
+                            width: 3rem;
+                        }
+                    }
+                    &.bot {
+                        bottom: 32rem;
+                        right: -16rem;
+                        &:after {
+                            top: 6rem;
+                            transform: rotateZ(45deg) scale(-1, 1);
+                            height: 11rem;
+                            left: -2rem;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,140 @@
+section#faq {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 7rem;
+    .container {
+        h2 {
+            margin: 0 0 2rem;
+            line-height: 1em;
+        }
+        p.text-warn {
+            margin: 0;
+            font-size: 2.4rem;
+            line-height: 2.6rem;
+        }
+
+        form.faq {
+            width: 80rem;
+            margin: 2rem auto 0;
+
+            .row {
+                text-align: left;
+                &:first-child {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .ceil {
+                    flex: 1;
+                    &:not(:last-child) {
+                        margin-right: 2rem;
+                        margin-bottom: 1.2rem;
+                    }
+                }
+
+                input, textarea {
+                    display: inline-block;
+                    width: 100%;
+                    font-size: 2.4rem;
+                    padding: .6rem 1.4rem;
+                    border-radius: 1.1rem;
+                    border: 2px transparent solid;
+                    resize: none;
+                    &::placeholder {
+                        color: $main_font_color;
+                    }
+
+                }
+
+                textarea {
+                    margin: 0 auto;
+                    height: 19.4rem;
+                }
+
+            }
+
+            .go-wrapper {
+                margin-top: -2.5rem;
+                button.btn-catch {
+                    font-size: 2.8rem;
+                    line-height: 3rem;
+                    padding: 1.2rem 5.5rem;
+                    border-radius: 1.6rem;
+                }
+            }
+        }
+
+        .faq-list {
+            width: 80rem;
+            margin: 3rem auto 0;
+            text-align: left;
+            font-size: 2rem;
+
+            .list-item {
+                div {
+                    padding: 0 1.4rem;
+                    margin: .2rem 0;
+                }
+                .question {
+                    text-transform: uppercase;
+                    background: $table_color;
+                    cursor: pointer;
+                    padding: .8rem 1.4rem;
+                    line-height: 2.2rem;
+                    transition: .3s ease-in-out;
+
+                    &:after {
+                        content: ' +';
+                    }
+
+                    &.active {
+                        padding: 1rem 1.4rem 0;
+                        background: transparent;
+                    }
+
+                    &.active:after{
+                        content: ' -';
+                    }
+                }
+                .answer {
+                    overflow: hidden;
+                    transition: 0.3s ease-in-out;
+                    max-height: 0;
+                    font-size: 1.8rem;
+                }
+
+            }
+        }
+
+    }
+}
+
+@include responsive {
+    section#faq {
+        .container {
+            form.faq {
+                width: 100%;
+                .row {
+                    flex-direction: column;
+
+                    input, textarea {
+                        text-align: center;
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+
+                    .ceil {
+                        &:not(:last-child) {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+            .faq-list {
+                width: 100%;
+            }
+        }
+    }
+}

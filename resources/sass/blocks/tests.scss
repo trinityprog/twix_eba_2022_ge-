@@ -1,0 +1,490 @@
+
+section#tests {
+    position: relative;
+    flex: 1;
+
+    .container {
+        .tab{
+            transition: all 0.6s ease-in-out;
+            transition-delay: 0.3s;
+            opacity: 1;
+            visibility: visible;
+
+            &.active{
+                transition-delay: 0s;
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        .tab_nav{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 8rem;
+
+            .tab_button{
+                margin: 0 1rem;
+                display: block;
+                width: 2.2rem;
+                height: 2.2rem;
+                border-radius: 50%;
+                background: white;
+                position: relative;
+
+                &:after{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    border-radius: 50%;
+                    transition: all 0.6s ease-in-out;
+                }
+                &.active:after{
+                    background: #701862;
+                }
+            }
+        }
+
+        .action-box {
+            display: flex;
+            justify-content: center;
+
+            width: 110rem;
+            margin: 0 auto 4rem;
+
+            &.hidden {
+                display: none;
+            }
+
+            &.user-can {
+                padding-top: 16rem;
+
+                p.description {
+                    text-align: center;
+
+                    font-size: 2rem;
+                    line-height: 2rem;
+
+                    margin: 0;
+
+                    &.instructions {
+                        font-size: 3rem;
+                        line-height: 3rem;
+                    }
+                }
+
+                .left {
+                    background: $table_color;
+                    padding: 2rem 3rem 0 .5rem;
+                    border-bottom: 2px solid $main_font_color;
+                    margin-right: 4rem;
+
+                    h3, p.warn {
+                        flex: 1;
+                        text-align: center;
+                    }
+
+                    p.warn {
+                        margin: 1rem 0;
+                        font-size: 2rem;
+                        line-height: 2rem;
+                    }
+
+                    .divided {
+                        display: flex;
+                        align-items: center;
+
+                        .inner-left {
+                            position: relative;
+                            img {
+                                width: 20rem;
+                                height: 13rem;
+                                object-fit: contain;
+                                position: relative;
+                                z-index: 1;
+                            }
+                            .bg{
+                                position: absolute;
+                                height: 100%;
+                                width: 100%;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%) rotate(15deg);
+                                background: url('../i/rules_swiper_bg.png') center/contain no-repeat;
+                                transition: 0.5s;
+
+                                &.rotate_bg{
+                                    transform: translate(-50%, -50%) rotate(-15deg);
+                                }
+                            }
+                        }
+
+                        .inner-right {
+                            margin-left: 2rem;
+                            margin-top: 2rem;
+
+                            .go-wrapper {
+                                a.btn-catch {
+                                    font-size: 2.8rem;
+                                    line-height: 1em;
+                                    border-radius: 1rem;
+                                    padding: .7rem 3rem;
+                                }
+                            }
+
+                            p.description {
+                                margin: 2rem 0 0;
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    max-width: 45%;
+
+                    #card {
+                        margin: 0 auto 8.6rem;
+                    }
+
+                    h3 {
+                        margin: 1rem 0;
+                    }
+
+                    h1 {
+                        margin: 0;
+                        text-align: center;
+                        font-size: 8rem;
+                        line-height: 7rem;
+                        font-weight: 100;
+                        color: $bg_link_color;
+                    }
+
+                    h4 {
+                        margin: 0 0 2rem;
+                        text-align: center;
+                        text-transform: uppercase;
+                        font-weight: 100;
+                        font-size: 3rem;
+                        line-height: 3rem;
+                        color: $bg_link_color;
+                    }
+
+                    .go-wrapper {
+                        a.btn-catch {
+                            font-size: 4rem;
+                            line-height: 4rem;
+                        }
+                    }
+                }
+
+                &.no-prize {
+                    align-items: center;
+                    .left {
+                        background: initial;
+                        align-items: center;
+                        border: none;
+                        padding: 0;
+                        margin-right: 6rem;
+                        .go-wrapper {
+                            margin-top: 1rem;
+                            .btn-catch {
+                                font-size: 4rem;
+                                line-height: 1em;
+                            }
+                        }
+                    }
+                    .right {
+                        #card {
+                            &:before {
+                                height: 90%;
+                                width: 90%;
+                                top: 5%;
+                                left: 5%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.user-cannot {
+                align-items: center;
+                padding-top: 10rem;
+
+                .left {
+                    margin-right: 3rem;
+                }
+
+                .right {
+                    max-width: 45%;
+
+                    #card {
+                        margin: 6rem auto;
+                    }
+                    p.description {
+                        margin: .6rem 0 2rem;
+                        font-size: 2.8rem;
+                        line-height: 2.8rem;
+                    }
+
+                    .go-wrapper {
+                        text-align: left;
+                        margin-left: -0.5rem;
+
+                        a.btn-catch {
+                            font-size: 3.8rem;
+                            line-height: 3.8rem;
+                            padding: 1rem 4.5rem;
+                        }
+                    }
+                }
+            }
+
+            &.test-start, &.test-process {
+                flex-direction: column;
+                align-items: center;
+
+                padding-top: 10rem;
+
+                h2 {
+                    margin: 0;
+                }
+
+                p {
+                    text-align: center;
+                    font-size: 3.5rem;
+                    line-height: 3.6rem;
+                    margin: 0 0 4rem;
+                }
+
+                div.go-wrapper {
+                    margin-top: 5rem;
+
+                    a.btn-catch {
+                        font-size: 4.2rem;
+                        line-height: 4.2rem;
+                        padding: 1.2rem 8rem;
+                    }
+                }
+            }
+
+            &.test-process {
+                form.choose-block {
+                    img.choose {
+                        height: 30rem;
+                    }
+                }
+            }
+
+            h3 {
+                margin: 0;
+
+                font-size: 4.4rem;
+                line-height: 4.4rem;
+                font-weight: 100;
+
+                text-align: center;
+                text-transform: uppercase;
+                &.moment {
+                    text-align: left;
+                }
+            }
+
+            img.moment {
+                height: 40rem;
+                border-radius: 1.4rem;
+                border: .4rem solid $white;
+            }
+
+
+        }
+
+        img.twix-img {
+            position: absolute;
+            display: inline-block;
+
+            &.left {
+                top: 15rem;
+                left: -31rem;
+                height: 50rem;
+            }
+
+            &.right {
+                top: 5rem;
+                right: -32rem;
+                height: 48rem;
+            }
+        }
+
+        .text-left, .text-right {
+            display: block;
+            position: absolute;
+            font-size: 4rem;
+            text-transform: uppercase;
+            line-height: 4rem;
+            text-align: center;
+        }
+
+        .text-left {
+            top: 50rem;
+            left: -12rem;
+            transform: rotateZ(12deg);
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+
+                transform: rotateZ(160deg);
+                height: 15rem;
+                width: 5rem;
+                left: 6rem;
+                top: -16rem;
+
+                background: url('../i/arrow.svg') center center/ contain no-repeat;
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+
+        .text-right {
+            top: 45rem;
+            right: -7rem;
+            transform: rotateZ(-8deg);
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+
+                transform: scale(-1, 1) rotateZ(140deg);
+                height: 16rem;
+                width: 5rem;
+                left: 7rem;
+                top: -18rem;
+
+                background: url('../i/arrow.svg') center center/ contain no-repeat;
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+
+    }
+}
+
+@include responsive {
+    section#tests {
+        .container {
+            width: 98vw;
+            padding-bottom: 2rem;
+            .action-box {
+                width: 100%;
+
+                h3.moment {
+                    text-align: center;
+                }
+
+                img.moment {
+                    margin-bottom: 4rem;
+                }
+
+                &.test-process, &.test-start {
+                    h2 {
+                        font-size: 4.5rem;
+                        line-height: 1em;
+                        margin-bottom: 2rem;
+                    }
+                    .choose-block {
+
+                        button {
+                            text-align: center;
+                            padding: 0;
+
+                            &:not(:last-child) {
+                                margin-right: 2rem;
+                            }
+
+                            img.choose {
+                                height: 20rem;
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+                &.user-cannot {
+                    padding-top: 4rem;
+                    flex-direction: column-reverse;
+                    text-align: center;
+
+                    .left {
+                        margin-right: 0;
+                        margin-bottom: 4rem;
+                    }
+
+                    .right {
+                        max-width: 100%;
+                        margin-bottom: 2rem;
+
+                        .go-wrapper {
+                            text-align: center;
+                        }
+                    }
+                }
+                &.user-can {
+                    flex-direction: column;
+                    padding-top: 4rem;
+
+                    .left {
+                        margin-right: 0;
+                        margin-bottom: 2rem;
+                        padding: 2rem 0;
+                        .divided {
+                            justify-content: center;
+                            .inner-left {
+                                img {
+                                    height: 12rem;
+                                    width: 18rem;
+                                }
+                                .bg {
+                                    height: 100%;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+
+                    .right {
+                        max-width: 100%;
+                        margin-bottom: 4rem;
+                        h1 {
+                            font-size: 9rem;
+                            line-height: 1em;
+                        }
+                    }
+
+                    p.description {
+                        &.instructions {
+                            font-size: 3.4rem;
+                            line-height: 1em;
+                        }
+                    }
+
+                    &.no-prize {
+                        .left {
+                            margin-right: 0;
+                        }
+                        .right {
+                            max-width: 100%;
+                            #card {
+                                margin: 8rem auto 8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

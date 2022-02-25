@@ -1,0 +1,88 @@
+section#mechanics {
+    z-index: 4;
+    margin-top: 8rem;
+    .container {
+        position: relative;
+        text-align: center;
+
+        h2 {
+            margin: 0;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 4rem;
+            line-height: 1em;
+            font-weight: 100;
+            margin: 0;
+        }
+
+        .go-wrapper {
+            margin-top: 2rem;
+        }
+
+        img.twix-img {
+            position: absolute;
+            &.left {
+                top: -5rem;
+                left: -24rem;
+                height: 60rem;
+            }
+            &.right {
+                top: 30rem;
+                right: -25rem;
+                height: 55rem;
+            }
+        }
+
+        .text-left, .text-right {
+            position: absolute;
+            font-size: 5rem;
+            text-transform: uppercase;
+            line-height: 5rem;
+        }
+
+        .text-left {
+            top: 40rem;
+            left: 0;
+            transform: rotateZ(12deg);
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+
+                transform: rotateZ(160deg);
+                height: 15rem;
+                width: 5rem;
+                left: 6rem;
+                top: -16rem;
+
+                background: url('../i/arrow.svg') center center/ contain no-repeat;
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+
+        .text-right {
+            top: 70rem;
+            right: 8rem;
+            transform: rotateZ(-8deg);
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+
+                transform: scale(-1, 1) rotateZ(140deg);
+                height: 16rem;
+                width: 5rem;
+                left: 7rem;
+                top: -18rem;
+
+                background: url('../i/arrow.svg') center center/ contain no-repeat;
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,329 @@
+section#check-register {
+    .container {
+        position: relative;
+        padding-top: 10rem;
+        text-align: center;
+        padding-bottom: 10rem;
+
+        &.small {
+
+            h2 {
+                display: none;
+            }
+
+            p.warn {
+                display: inline-block;
+                width: initial;
+                margin: 1rem auto 0;
+                background: $violet;
+                color: $white;
+                padding: 1rem 1.4rem;
+            }
+
+        }
+
+        &.main {
+            p.warn {
+                display: none;
+            }
+        }
+
+        h2 {
+            font-size: 5rem;
+            margin: 0;
+        }
+
+        p {
+            margin: 0 auto;
+            width: 63rem;
+            font-size: 2rem;
+            line-height: 2rem;
+            text-align: center;
+
+            span {
+                color: $bg_link_color;
+            }
+        }
+
+        .row-special {
+            margin: 2rem auto 0;
+            display: flex;
+            width: 65rem;
+            justify-content: center;
+
+            & > img {
+                margin-right: 2rem;
+                height: 32rem;
+                object-fit: contain;
+            }
+
+            form.check-register {
+                padding-top: 0.6rem;
+
+                .row {
+                    display: flex;
+
+                    .input-wrap {
+                        width: 27%;
+                        position: relative;
+
+                        &:not(:last-child) {
+                            margin-right: 9.5%;
+                        }
+
+                        &:before {
+                            position: absolute;
+                            content: '1';
+                            color: $white;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 3rem;
+                            width: 3rem;
+                            left: -1.25rem;
+                            top: 0.2rem;
+                            background: $violet;
+                            font-size: 2rem;
+                            line-height: 1em;
+                            border-radius: 100%;
+                        }
+
+                        &:nth-child(2):before {
+                            content: '2';
+                        }
+
+
+                        &:nth-child(3):before {
+                            content: '3';
+                        }
+
+                        input {
+                            width: 100%;
+                            display: inline-block;
+                            padding: 0.4rem 0 0.4rem 2.5rem;
+                            font-size: 2.2rem;
+                            line-height: 2.2rem;
+                            border-radius: 0.8rem;
+                            color: $main_font_color;
+
+                            &::placeholder {
+                                color: $main_font_color;
+                            }
+                        }
+
+                        span{
+                            padding: 0;
+                            font-size: 1.2rem;
+                            display: block;
+                            text-align: left;
+                        }
+                    }
+                }
+
+                .check-zone {
+                    margin-top: 2rem;
+                    width: 100%;
+                    height: 25rem;
+                    background: $white;
+                    border-radius: 0.8rem;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+
+                    .icon {
+                        position: relative;
+                        height: 5rem;
+                        width: 6.153rem;
+                        mask-image: url('../i/photo.png');
+                        mask-size: contain;
+                        &:before {
+                            background: $gray;
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
+                        }
+                        &.error:before {
+                            background: $bg_link_color;
+                        }
+                    }
+
+                    p.message {
+                        color: $gray;
+                        width: 100%;
+                        margin: 1rem 0 0;
+
+                        &.choosen {
+                            color: $main_font_color;
+                        }
+
+                        span {
+                            color: inherit;
+
+                            &:last-child {
+                                font-size: 2.5rem;
+                            }
+                        }
+                    }
+
+                }
+
+                .go-wrapper {
+                    text-align: right;
+                    margin-top: 2rem;
+
+                    .btn-catch {
+                        font-size: 2.6rem;
+                        border-radius: 1rem;
+                        padding: 1.2rem 3.5rem;
+
+                        &.disabled {
+                            pointer-events: none;
+                            opacity: .7;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        & {
+            img.twix-img {
+                position: absolute;
+                display: inline-block;
+
+                &.left {
+                    top: 15rem;
+                    left: -31rem;
+                    height: 50rem;
+                }
+
+                &.right {
+                    top: 5rem;
+                    right: -32rem;
+                    height: 48rem;
+                }
+            }
+
+            .text-left, .text-right {
+                display: block;
+                position: absolute;
+                font-size: 4rem;
+                text-transform: uppercase;
+                line-height: 4rem;
+                text-align: center;
+            }
+
+            .text-left {
+                top: 50rem;
+                left: -12rem;
+                transform: rotateZ(12deg);
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+
+                    transform: rotateZ(160deg);
+                    height: 15rem;
+                    width: 5rem;
+                    left: 6rem;
+                    top: -16rem;
+
+                    background: url('../i/arrow.svg') center center/ contain no-repeat;
+                    pointer-events: none;
+                    user-select: none;
+                }
+            }
+
+            .text-right {
+                top: 45rem;
+                right: -7rem;
+                transform: rotateZ(-8deg);
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+
+                    transform: scale(-1, 1) rotateZ(140deg);
+                    height: 16rem;
+                    width: 5rem;
+                    left: 7rem;
+                    top: -18rem;
+
+                    background: url('../i/arrow.svg') center center/ contain no-repeat;
+                    pointer-events: none;
+                    user-select: none;
+                }
+            }
+        }
+    }
+}
+
+
+@include responsive {
+    section#check-register {
+        .container {
+            padding-top: 4rem;
+            padding-bottom: 6rem;
+            width: 98vw;
+
+            p {
+                width: 100%;
+            }
+
+
+            .row-special {
+                width: 100%;
+                position: relative;
+
+                img {
+                    height: 36rem;
+                    margin-right: 2rem;
+                }
+
+                form.check-register {
+                    padding-top: 7rem;
+                    width: 45%;
+
+                    .row {
+                        flex-direction: column;
+                        width: 100%;
+
+                        .input-wrap {
+                            &:not(:last-child) {
+                                margin-right: 0;
+                                margin-bottom: 3rem;
+                            }
+
+                            width: 100%;
+
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .check-zone {
+                        width: 215%;
+                        margin-left: -115%;
+                    }
+
+                    .go-wrapper {
+                        width: 215%;
+                        margin-left: -115%;
+                        text-align: center;
+                    }
+
+                }
+            }
+        }
+    }
+}

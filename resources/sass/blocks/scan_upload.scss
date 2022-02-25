@@ -1,0 +1,112 @@
+section#scan_upload {
+    .container {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+        h1, h2 {
+            line-height: 1em;
+            font-weight: 100;
+            margin: 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        .upload-area {
+            width: 50rem;
+            height: 35rem;
+            background: $white;
+            border-radius: 2rem;
+            margin: 4rem auto 0;
+        }
+
+
+        img.twix-img {
+            position: absolute;
+            display: inline-block;
+
+            &.left {
+                top: 23rem;
+                left: -31rem;
+                height: 50rem;
+            }
+
+            &.right {
+                top: 15rem;
+                right: -32rem;
+                height: 48rem;
+            }
+        }
+
+        .text-left, .text-right {
+            display: block;
+            position: absolute;
+            font-size: 4rem;
+            text-transform: uppercase;
+            line-height: 4rem;
+            text-align: center;
+        }
+
+        .text-left {
+            top: 60rem;
+            left: -12rem;
+            transform: rotateZ(12deg);
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+
+                transform: rotateZ(160deg);
+                height: 15rem;
+                width: 5rem;
+                left: 6rem;
+                top: -16rem;
+
+                background: url('../i/arrow.svg') center center/ contain no-repeat;
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+
+        .text-right {
+            top: 55rem;
+            right: -7rem;
+            transform: rotateZ(-8deg);
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+
+                transform: scale(-1, 1) rotateZ(140deg);
+                height: 16rem;
+                width: 5rem;
+                left: 7rem;
+                top: -18rem;
+
+                background: url('../i/arrow.svg') center center/ contain no-repeat;
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+
+    }
+}
+
+@include responsive {
+    section#scan_upload {
+        .container {
+            .upload-area {
+                width: 100%;
+            }
+        }
+    }
+}

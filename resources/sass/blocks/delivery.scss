@@ -1,0 +1,242 @@
+section#delivery {
+    .container {
+        padding-top: 8rem;
+        font-size: 2rem;
+        line-height: 1em;
+        text-align: center;
+
+        p {
+            span {
+                text-transform: uppercase;
+            }
+
+            a {
+                border-bottom: $main_font_color solid 1px;
+            }
+        }
+
+        .action-box {
+            margin: 2rem auto 9rem;
+            display: flex;
+            width: 62rem;
+            justify-content: center;
+
+            .left {
+                .prize {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    background: $table_color;
+                    text-align: center;
+                    border-bottom: 2px solid $main_font_color;
+                    padding: 1.2rem 2rem;
+                    margin: 0;
+
+                    h3 {
+                        font-weight: 100;
+                        font-size: 3rem;
+                        line-height: 3rem;
+                        margin: 1rem 0;
+                    }
+
+                    img {
+                        height: 20rem;
+                        object-fit: contain;
+                    }
+
+                    p.info {
+                        font-size: 2.2rem;
+                        line-height: 2.2rem;
+                    }
+                }
+            }
+
+            .right {
+                margin-left: 4rem;
+                position: relative;
+                max-height: 40rem;
+
+                .go-wrapper {
+                    position: absolute;
+                    width: 100%;
+
+                    .btn-catch {
+                        width: 100%;
+                        font-size: 3rem;
+                        line-height: 1em;
+                        border-radius: 1rem;
+                    }
+                }
+
+                .row {
+                    box-sizing: border-box;
+
+                    &:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+
+                    &.double {
+                        display: flex;
+                        justify-content: space-between;
+
+                        input {
+                            width: 47%;
+                        }
+                    }
+
+                    input, textarea, select {
+                        display: inline-block;
+                        width: 100%;
+                        font-size: 1.8rem;
+                        line-height: 1em;
+                        color: $main_font_color;
+                        resize: none;
+                        padding: 0.5rem 1.5rem;
+                        border-radius: 1rem;
+
+                        &::placeholder {
+                            color: inherit;
+                        }
+                    }
+
+                    textarea {
+                        max-height: 100%;
+                    }
+                }
+            }
+        }
+
+        img.twix-img {
+            position: absolute;
+            display: inline-block;
+
+            &.left {
+                top: 15rem;
+                left: -31rem;
+                height: 50rem;
+            }
+
+            &.right {
+                top: 5rem;
+                right: -32rem;
+                height: 48rem;
+            }
+        }
+
+        .text-left, .text-right {
+            display: block;
+            position: absolute;
+            font-size: 4rem;
+            text-transform: uppercase;
+            line-height: 4rem;
+            text-align: center;
+        }
+
+        .text-left {
+            top: 50rem;
+            left: -12rem;
+            transform: rotateZ(12deg);
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+
+                transform: rotateZ(160deg);
+                height: 15rem;
+                width: 5rem;
+                left: 6rem;
+                top: -16rem;
+
+                background: url('../i/arrow.svg') center center/ contain no-repeat;
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+
+        .text-right {
+            top: 45rem;
+            right: -7rem;
+            transform: rotateZ(-8deg);
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+
+                transform: scale(-1, 1) rotateZ(140deg);
+                height: 16rem;
+                width: 5rem;
+                left: 7rem;
+                top: -18rem;
+
+                background: url('../i/arrow.svg') center center/ contain no-repeat;
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+    }
+}
+
+@include responsive {
+    section#delivery {
+        .container {
+            padding-top: 3rem;
+
+            p:last-child {
+                margin-bottom: 4rem;
+            }
+
+            .action-box {
+                flex-direction: column;
+                width: 100%;
+                margin-bottom: 4rem;
+
+                .left {
+                    margin-bottom: 2rem;
+
+                    .prize {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding: 2rem;
+
+                        img {
+                            height: 16rem;
+                        }
+
+                        & > h3 {
+                            &:first-child {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    margin-left: 0;
+                    max-height: initial;
+
+                    p:first-child {
+                        margin-bottom: 3rem;
+                    }
+
+                    form {
+                        .row {
+                            input, textarea, select {
+                                font-size: 2.2rem;
+                            }
+                        }
+                        .go-wrapper {
+                            position: static;
+                            .btn-catch {
+                                width: initial;
+                                padding: 1.2rem 8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+div[data-remodal-id="check-success"] {
+    width: 40rem;
+    padding: 4rem 1rem 3rem;
+
+    h3 {
+        margin: 0;
+    }
+    p {
+        font-size: 2.4rem;
+        margin: 1rem 0 3rem;
+    }
+    .go-wrapper {
+        margin-bottom: 2rem;
+        .btn-catch {
+            font-size: 3rem;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@import 'node_modules/swiper/swiper';
+@import 'node_modules/dropzone/src/dropzone';
+@import '~remodal/src/remodal-default-theme.css';
+@import '~remodal/src/remodal.css';
+@import "~simplebar/dist/simplebar.css";
+@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+
+@import 'helpers/normalize';
+@import 'helpers/colors';
+@import 'helpers/fonts';
+@import 'helpers/main';
+
+@import 'blocks/header';
+@import 'blocks/hero';
+@import 'blocks/error';
+@import 'blocks/rules';
+@import 'blocks/mechanics';
+@import 'blocks/winners';
+@import 'blocks/faq';
+@import 'blocks/footer';
+@import 'blocks/tests';
+@import 'blocks/profile';
+@import 'blocks/check_register';
+@import 'blocks/scan_upload';
+@import 'blocks/delivery';
+
+@import 'modals/age_filter';
+@import 'modals/faq_success';
+@import 'modals/already_uploaded';
+@import 'modals/login';
+@import 'modals/register';
+@import 'modals/register_submit';
+@import 'modals/delivery_success';
+@import 'modals/check_success';
+@import 'modals/footer-modals';
+@import 'modals/sms_forgot';
+@import 'modals/test-limit';
+@import 'modals/scanner_wrong';
+@import 'modals/main_prize';
